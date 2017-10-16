@@ -16,7 +16,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    NSNumber *age = [NSNumber numberWithInt:42];
+    NSNumber *age1 = [NSNumber numberWithInt:55];
+    
+    
+    
+    //Not safe if the value in dictionary are not the same type.
+    //NSDictionary *dict = @{@"jacke":age, @"John": age1, @"Mcqueen Muge": @"Niu"}; XXX
+    
+    NSDictionary *dict = @{@"jacke":age, @"John": age1};
+    NSDictionary *dict2 = [[NSDictionary alloc]init]; //Multiple ways to initialize a dictionary.
+
+    int JacksAge = [[dict objectForKey:@"jacke"] intValue];
+    NSLog(@"Jacke's Age %d", JacksAge);
+    
+    
+    //For NSDictionary dict, never do the follows:
+    //[dict setValue(****)]
+    
+    //mutableCopy
+    NSMutableDictionary *mut = [@{@"Jack":@"1", @"Luke":@"2", @"Think":@"3"} mutableCopy];
+    
+    NSMutableDictionary *mut2 = [[NSMutableDictionary alloc]init];
+    [mut2 setObject:@"Lucky Niu" forKey:@"Great"];
+    [mut2 setObject:[NSNumber numberWithInt:40] forKey:@"doubletrouble"];
 }
 
 
