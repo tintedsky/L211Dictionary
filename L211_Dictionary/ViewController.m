@@ -7,16 +7,20 @@
 //
 
 #import "ViewController.h"
+#import "Civic.h"
 
 @interface ViewController ()
-
+@property (nonatomic,strong) NSString *iAmPrivate;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    // In objective C, there is no notion for hiding or protection.
+    Civic *civic = [[Civic alloc]init];
+
 }
 
 
