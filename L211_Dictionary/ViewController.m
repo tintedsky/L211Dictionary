@@ -16,7 +16,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    NSArray *cars = @[@"BMW", @"Maserati", @"Bronco II"];
+    
+    for(int i = 0; i < cars.count; ++i){
+        NSString *car = [cars objectAtIndex:i];
+        NSLog(@"%@", car);
+        
+        // The following also seems to work.
+        //NSLog(@"%@", cars[i]);
+    }
+    
+    //Not for(car in cars), need give a type
+    // The following way used for iterate through arrays and dictionaries.
+    for (NSString *car in cars) {
+        NSLog(@"%@", car);
+    }
 }
 
 
